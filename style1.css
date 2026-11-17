@@ -1,0 +1,53 @@
+body {
+    background-color: #f9f9f0;
+    color: #000000;
+    margin: 0;
+    padding: 25px;              /* Margen alrededor de toda la pantalla */
+    box-sizing: border-box;
+    height: 100vh;              /* Ocupa todo el alto de la pantalla */
+    display: flex;
+    align-items: flex-start;    /* Texto arriba a la izquierda (cambia a 'center' si lo quieres centrado en altura) */
+    gap: 30px;                  /* Espacio entre las palabras y la foto */
+}
+
+.columna-texto {
+    flex-shrink: 0;             /* Evita que las palabras se aplasten */
+}
+
+.columna-texto p {
+    margin: 8px 0;
+}
+
+.columna-texto p:first-child {
+    margin-top: 0;              /* Alinea la primera frase con el borde superior de la foto */
+}
+
+a, a:visited {
+    color: #166800;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #F2E94E;
+    text-decoration: none;
+}
+
+img {
+    flex: 1;                    /* La foto ocupa todo el ancho que sobra */
+    min-width: 0;               /* Evita que la foto desborde la pantalla */
+    height: 100%;               /* La foto ocupa todo el alto disponible */
+    object-fit: cover;          /* Rellena el espacio sin deformarse (cambia 'cover' por 'contain' si no quieres que recorte bordes) */
+}
+
+/* Para que en móviles pequeños se apile y no quede apretado */
+@media (max-width: 700px) {
+    body {
+        flex-direction: column;
+        height: auto;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        flex: none;
+    }
+}
