@@ -1,3 +1,43 @@
-¨{
-    h1 color: #000000;}
+
+body {
+    background-color: #f9f9f0;
+    color: #000000;
+    margin: 0;
+    padding: 25px;             /* Crea un margen interior para que nada toque los bordes de la pantalla */
+    box-sizing: border-box;    /* Evita que el padding genere barras de scroll innecesarias */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+    color: #0c3601;
+    margin: 12px 0 6px 0; /* 12px arriba, 6px abajo */
+}
+
+p {
+    margin: 8px 0; /* Reduce el espacio arriba y abajo del párrafo */
+}
+
+/* Estilo para tus enlaces y los h3 */
+h3, a, a:visited {
+    color: #166800;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 3px 0; /* Reduce mucho el espacio vertical entre cada palabra */
+}
+
+a:hover {
+    background-color: #F2E94E;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    max-height: 100%; /* Limita la altura máxima de las imágenes */
+    margin: 15px 0; /* Deja 50px de espacio entre foto y foto */
 }
