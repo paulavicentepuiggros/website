@@ -51,3 +51,25 @@ img {
         flex: none;
     }
 }
+
+.columnas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas iguales */
+    gap: 20px;                             /* Espacio entre las fotos */
+    width: 100%;
+    max-width: 900px;                      /* Ancho máximo del bloque en pantallas grandes */
+}
+
+.columnas img {
+    width: 100%;
+    height: auto;
+    margin: 0;                             /* Importante: quita márgenes anteriores para que queden alineadas */
+    display: block;
+}
+
+/* En móviles (opcional): las pone en 1 sola columna para que se vean más grandes */
+@media (max-width: 600px) {
+    .columnas {
+        grid-template-columns: 1fr;
+    }
+}
