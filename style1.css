@@ -102,5 +102,7 @@ a:hover {
     .columnas {
         width: 100%;
         flex: none;
+        grid-template-columns: 1fr; /* Posa les fotos en 1 sola columna gran al mòbil */
+        gap: 20px;                  /* Espai vertical entre foto i foto (opcional) */
     }
 }
