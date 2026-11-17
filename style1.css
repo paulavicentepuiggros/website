@@ -2,16 +2,20 @@ body {
     background-color: #f9f9f0;
     color: #000000;
     margin: 0;
-    padding: 25px;              /* Margen alrededor de toda la pantalla */
+    padding: 25px;              /* Marge al voltant de tota la pantalla */
     box-sizing: border-box;
-    height: 100vh;              /* Ocupa todo el alto de la pantalla */
+    min-height: 100vh;
     display: flex;
-    align-items: flex-start;    /* Texto arriba a la izquierda (cambia a 'center' si lo quieres centrado en altura) */
-    gap: 30px;                  /* Espacio entre las palabras y la foto */
+    align-items: flex-start;
+    gap: 35px;                  /* Espai entre el text i les fotos */
 }
 
+
+
 .columna-texto {
-    flex-shrink: 0;             /* Evita que las palabras se aplasten */
+    flex-shrink: 0;
+    position: sticky;           /* Deixa el text fix mentre fas scroll */
+    top: 25px;                  /* Distància respecte a la vora superior (igual que el padding del body) */
 }
 
 .columna-texto p {
@@ -19,9 +23,8 @@ body {
 }
 
 .columna-texto p:first-child {
-    margin-top: 0;              /* Alinea la primera frase con el borde superior de la foto */
+    margin-top: 0;
 }
-
 a, a:visited {
     color: #166800;
     text-decoration: none;
@@ -32,44 +35,33 @@ a:hover {
     text-decoration: none;
 }
 
-img {
-    flex: 1;                    /* La foto ocupa todo el ancho que sobra */
-    min-width: 0;               /* Evita que la foto desborde la pantalla */
-    height: 100%;               /* La foto ocupa todo el alto disponible */
-    object-fit: cover;          /* Rellena el espacio sin deformarse (cambia 'cover' por 'contain' si no quieres que recorte bordes) */
-}
-
-/* Para que en móviles pequeños se apile y no quede apretado */
-@media (max-width: 700px) {
-    body {
-        flex-direction: column;
-        height: auto;
-    }
-    img {
-        width: 100%;
-        height: auto;
-        flex: none;
-    }
-}
-
+/* Bloc de les fotos ocupant tot l'ample restant */
 .columnas {
+    flex: 1;                    /* Ocupa tot l'ample disponible */
+    min-width: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas iguales */
-    gap: 20px;                             /* Espacio entre las fotos */
-    width: 100%;
-    max-width: 900px;                      /* Ancho máximo del bloque en pantallas grandes */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnes (canvia el 3 per un 4 si les vols més petites) */
+    gap: 15px;                  /* Espai entre foto i foto */
+    align-items: start;
 }
 
 .columnas img {
     width: 100%;
     height: auto;
-    margin: 0;                             /* Importante: quita márgenes anteriores para que queden alineadas */
     display: block;
 }
 
-/* En móviles (opcional): las pone en 1 sola columna para que se vean más grandes */
-@media (max-width: 600px) {
+
+
+
+
+/* Per a mòbils */
+@media (max-width: 750px) {
+    body {
+        flex-direction: column;
+    }
     .columnas {
-        grid-template-columns: 1fr;
+        width: 100%;
+        flex: none;
     }
 }
