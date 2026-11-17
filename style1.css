@@ -10,10 +10,17 @@ body {
     gap: 35px;
 }
 
+
 .columna-texto {
     flex-shrink: 0;
     position: sticky;
     top: 25px;
+}
+
+h2 {
+    font-family: verdana, sans-serif;
+    color: #031000;
+    font-size: 16px;  
 }
 
 /* Amaga l'interruptor i el botó desplegable en ordinadors */
@@ -71,8 +78,8 @@ a:hover {
     .menu-boto {
         display: inline-block;
         cursor: pointer;
-        color: #166800;
-        border: 1px solid #166800; /* Esborra aquesta línia si no vols requadre */
+        color: #0d3a00;
+        border: 1px solid #0d3a00; /* Esborra aquesta línia si no vols requadre */
         padding: 6px 12px;
         user-select: none;
     }
