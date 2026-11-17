@@ -10,20 +10,12 @@ body {
     gap: 35px;
 }
 
-
 .columna-texto {
     flex-shrink: 0;
     position: sticky;
     top: 25px;
 }
 
-h2 {
-    font-family: verdana, sans-serif;
-    color: #031000;
-    font-size: 16px;  
-}
-
-/* Amaga l'interruptor i el botó desplegable en ordinadors */
 .menu-check,
 .menu-boto {
     display: none;
@@ -47,6 +39,7 @@ a:hover {
     text-decoration: none;
 }
 
+/* Ordinador: 3 columnes */
 .columnas {
     flex: 1;
     min-width: 0;
@@ -62,7 +55,7 @@ a:hover {
     display: block;
 }
 
-/* MÒBILS: converteix el text en un desplegable */
+/* Mòbils: menú desplegable + 1 sola columna gran per a les fotos */
 @media (max-width: 750px) {
     body {
         flex-direction: column;
@@ -74,12 +67,11 @@ a:hover {
         width: 100%;
     }
 
-    /* Estil del botó desplegable */
     .menu-boto {
         display: inline-block;
         cursor: pointer;
-        color: #0d3a00;
-        border: 1px solid #0d3a00; /* Esborra aquesta línia si no vols requadre */
+        color: #166800;
+        border: 1px solid #166800;
         padding: 6px 12px;
         user-select: none;
     }
@@ -88,7 +80,6 @@ a:hover {
         content: " ▾";
     }
 
-    /* Quan s'obre el desplegable */
     .menu-check:checked + .menu-boto {
         margin-bottom: 12px;
     }
@@ -97,7 +88,6 @@ a:hover {
         content: " ▴";
     }
 
-    /* Amaga els textos per defecte al mòbil i els mostra en tocar el botó */
     .columna-texto p {
         display: none;
     }
@@ -109,7 +99,7 @@ a:hover {
     .columnas {
         width: 100%;
         flex: none;
-        grid-template-columns: 1fr; /* Posa les fotos en 1 sola columna gran al mòbil */
-        gap: 20px;                  /* Espai vertical entre foto i foto (opcional) */
+        grid-template-columns: 1fr; /* Força 1 sola columna al mòbil */
+        gap: 20px;
     }
 }
