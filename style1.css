@@ -2,29 +2,34 @@ body {
     background-color: #f9f9f0;
     color: #000000;
     margin: 0;
-    padding: 25px;              /* Marge al voltant de tota la pantalla */
+    padding: 25px;
     box-sizing: border-box;
     min-height: 100vh;
     display: flex;
     align-items: flex-start;
-    gap: 35px;                  /* Espai entre el text i les fotos */
+    gap: 35px;
 }
-
-
 
 .columna-texto {
     flex-shrink: 0;
-    position: sticky;           /* Deixa el text fix mentre fas scroll */
-    top: 25px;                  /* Distància respecte a la vora superior (igual que el padding del body) */
+    position: sticky;
+    top: 25px;
+}
+
+/* Amaga l'interruptor i el botó desplegable en ordinadors */
+.menu-check,
+.menu-boto {
+    display: none;
 }
 
 .columna-texto p {
     margin: 8px 0;
 }
 
-.columna-texto p:first-child {
+.columna-texto p:first-of-type {
     margin-top: 0;
 }
+
 a, a:visited {
     color: #166800;
     text-decoration: none;
@@ -35,13 +40,12 @@ a:hover {
     text-decoration: none;
 }
 
-/* Bloc de les fotos ocupant tot l'ample restant */
 .columnas {
-    flex: 1;                    /* Ocupa tot l'ample disponible */
+    flex: 1;
     min-width: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnes (canvia el 3 per un 4 si les vols més petites) */
-    gap: 15px;                  /* Espai entre foto i foto */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
     align-items: start;
 }
 
@@ -51,15 +55,50 @@ a:hover {
     display: block;
 }
 
-
-
-
-
-/* Per a mòbils */
+/* MÒBILS: converteix el text en un desplegable */
 @media (max-width: 750px) {
     body {
         flex-direction: column;
+        gap: 20px;
     }
+
+    .columna-texto {
+        position: static;
+        width: 100%;
+    }
+
+    /* Estil del botó desplegable */
+    .menu-boto {
+        display: inline-block;
+        cursor: pointer;
+        color: #166800;
+        border: 1px solid #166800; /* Esborra aquesta línia si no vols requadre */
+        padding: 6px 12px;
+        user-select: none;
+    }
+
+    .menu-boto::after {
+        content: " ▾";
+    }
+
+    /* Quan s'obre el desplegable */
+    .menu-check:checked + .menu-boto {
+        margin-bottom: 12px;
+    }
+
+    .menu-check:checked + .menu-boto::after {
+        content: " ▴";
+    }
+
+    /* Amaga els textos per defecte al mòbil i els mostra en tocar el botó */
+    .columna-texto p {
+        display: none;
+    }
+
+    .menu-check:checked ~ p {
+        display: block;
+    }
+
     .columnas {
         width: 100%;
         flex: none;
