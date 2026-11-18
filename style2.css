@@ -58,7 +58,30 @@ a:hover {
     height: auto;
     display: block;
 }
+/* Dues columnes de text sota les imatges */
+.dos-textos {
+    grid-column: 1 / -1;            /* Ocupa tot l'ample de les fotos */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnes iguals */
+    gap: 30px;                      /* Espai entre la columna negra i la grisa */
+    margin-top: 20px;               /* Separació respecte a l'última foto */
+    margin-bottom: 30px;            /* Aire a baix de tot de la pàgina */
+}
 
+.dos-textos p {
+    margin-top: 0;
+    line-height: 1.5;               /* Fa que el text sigui més còmode de llegir */
+}
+
+.text-negre,
+.text-negre p {
+    color: #000000;                 /* Text negre */
+}
+
+.text-gris,
+.text-gris p {
+    color: #4a4a4a;                 /* Gris fort (canvia-ho a #333333 per més fosc o #666666 per més clar) */
+}
 /* Mòbils: menú desplegable + 1 sola columna gran per a les fotos */
 @media (max-width: 750px) {
     body {
@@ -105,5 +128,10 @@ a:hover {
         flex: none;
         grid-template-columns: 1fr; /* Força 1 sola columna al mòbil */
         gap: 20px;
+    }
+    .dos-textos {
+        grid-template-columns: 1fr; /* Al mòbil passa a 1 sola columna */
+        gap: 15px;
+        /* Si al mòbil veus el text enganxat a les vores, afegeix: padding: 0 20px; */
     }
 }
