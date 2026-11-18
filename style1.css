@@ -16,6 +16,10 @@ body {
     top: 25px;
 }
 
+.columna-texto h2 {
+    margin-top: 0;
+}
+
 .menu-check,
 .menu-boto {
     display: none;
@@ -23,16 +27,15 @@ body {
 
 .columna-texto p {
     margin: 8px 0;
+    width: 250px; /* Ajusta aquest número fins que el teu nom càpiga en 1 línia i els títols llargs baixin sols */
 }
 
 .columna-texto p:first-of-type {
     margin-top: 0;
 }
-p {
-     font-size: 13px;
-}
+
 a, a:visited {
-    color: #041500;
+    color: #0a2e00;
     text-decoration: none;
 }
 

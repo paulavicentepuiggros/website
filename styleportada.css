@@ -16,10 +16,7 @@ body {
     position: sticky;
     top: 25px;
 }
-p {
-     color: #000000;
-   
-}
+
 .columna-texto h2 {
     margin-top: 0;
 }
@@ -37,10 +34,8 @@ p {
     margin-top: 0;
 }
 
-
-
-a,a:visited {
-    color: #0c3700;
+a, a:visited {
+    color: #0a2e00;
     text-decoration: none;
 }
 
@@ -121,6 +116,15 @@ a:hover {
     }
 
     .columnas {
+        width: 100%;
+        flex: none;
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .foto-portada {
+        width: 100%;
+        flex: none;
+        height: 70vh;
     }
 }

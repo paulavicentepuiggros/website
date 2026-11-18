@@ -16,6 +16,10 @@ body {
     top: 25px;
 }
 
+.columna-texto h2 {
+    margin-top: 0;
+}
+
 .menu-check,
 .menu-boto {
     display: none;
@@ -23,9 +27,7 @@ body {
 
 .columna-texto p {
     margin: 8px 0;
-}
-p {
-     font-size: 13px;
+    width: 250px; /* Ajusta aquest número fins que el teu nom càpiga en 1 línia i els títols llargs baixin sols */
 }
 
 .columna-texto p:first-of-type {
@@ -33,7 +35,7 @@ p {
 }
 
 a, a:visited {
-    color: #166800;
+    color: #0a2e00;
     text-decoration: none;
 }
 
@@ -41,7 +43,6 @@ a:hover {
     background-color: #F2E94E;
     text-decoration: none;
 }
-
 /* Ordinador: 3 columnes */
 .columnas {
     flex: 1;
