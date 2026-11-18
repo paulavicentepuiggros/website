@@ -28,9 +28,11 @@ body {
 .columna-texto p:first-of-type {
     margin-top: 0;
 }
-
+p {
+     font-size: 13px;
+}
 a, a:visited {
-    color: #166800;
+    color: #041500;
     text-decoration: none;
 }
 

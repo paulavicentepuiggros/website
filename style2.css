@@ -1,0 +1,108 @@
+body {
+    background-color: #f9f9f0;
+    color: #000000;
+    margin: 0;
+    padding: 25px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+.columna-texto {
+    flex-shrink: 0;
+    position: sticky;
+    top: 25px;
+}
+
+.menu-check,
+.menu-boto {
+    display: none;
+}
+
+.columna-texto p {
+    margin: 8px 0;
+}
+p {
+     font-size: 13px;
+}
+
+.columna-texto p:first-of-type {
+    margin-top: 0;
+}
+
+a, a:visited {
+    color: #166800;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #F2E94E;
+    text-decoration: none;
+}
+
+/* Ordinador: 3 columnes */
+.columnas {
+    flex: 1;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+    align-items: start;
+}
+
+.columnas img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mòbils: menú desplegable + 1 sola columna gran per a les fotos */
+@media (max-width: 750px) {
+    body {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .columna-texto {
+        position: static;
+        width: 100%;
+    }
+
+    .menu-boto {
+        display: inline-block;
+        cursor: pointer;
+        color: #166800;
+        border: 1px solid #166800;
+        padding: 6px 12px;
+        user-select: none;
+    }
+
+    .menu-boto::after {
+        content: " ▾";
+    }
+
+    .menu-check:checked + .menu-boto {
+        margin-bottom: 12px;
+    }
+
+    .menu-check:checked + .menu-boto::after {
+        content: " ▴";
+    }
+
+    .columna-texto p {
+        display: none;
+    }
+
+    .menu-check:checked ~ p {
+        display: block;
+    }
+
+    .columnas {
+        width: 100%;
+        flex: none;
+        grid-template-columns: 1fr; /* Força 1 sola columna al mòbil */
+        gap: 20px;
+    }
+}
