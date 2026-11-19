@@ -80,7 +80,7 @@ a:hover {
 
 .text-gris,
 .text-gris p {
-    color: #4a4a4a;                 /* Gris fort (canvia-ho a #333333 per més fosc o #666666 per més clar) */
+    color: #5c5c5c;                 /* Gris fort (canvia-ho a #333333 per més fosc o #666666 per més clar) */
 }
 /* Mòbils: menú desplegable + 1 sola columna gran per a les fotos */
 @media (max-width: 750px) {
