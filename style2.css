@@ -27,7 +27,11 @@ body {
 
 .columna-texto p {
     margin: 8px 0;
-    width: 250px; /* Ajusta aquest número fins que el teu nom càpiga en 1 línia i els títols llargs baixin sols */
+    width: 250px;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
 }
 
 .columna-texto p:first-of-type {
@@ -43,6 +47,7 @@ a:hover {
     background-color: #F2E94E;
     text-decoration: none;
 }
+
 /* Ordinador: 3 columnes */
 .columnas {
     flex: 1;
@@ -58,30 +63,36 @@ a:hover {
     height: auto;
     display: block;
 }
+
 /* Dues columnes de text sota les imatges */
 .dos-textos {
-    grid-column: 1 / -1;            /* Ocupa tot l'ample de les fotos */
+    grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columnes iguals */
-    gap: 30px;                      /* Espai entre la columna negra i la grisa */
-    margin-top: 20px;               /* Separació respecte a l'última foto */
-    margin-bottom: 30px;            /* Aire a baix de tot de la pàgina */
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .dos-textos p {
     margin-top: 0;
-    line-height: 1.5;               /* Fa que el text sigui més còmode de llegir */
+    line-height: 1.5;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
 }
 
 .text-negre,
 .text-negre p {
-    color: #000000;                 /* Text negre */
+    color: #000000;
 }
 
 .text-gris,
 .text-gris p {
-    color: #5c5c5c;                 /* Gris fort (canvia-ho a #333333 per més fosc o #666666 per més clar) */
+    color: #5c5c5c;
 }
+
 /* Mòbils: menú desplegable + 1 sola columna gran per a les fotos */
 @media (max-width: 750px) {
     body {
@@ -121,17 +132,21 @@ a:hover {
 
     .menu-check:checked ~ p {
         display: block;
+        text-align: justify;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
     }
 
     .columnas {
         width: 100%;
         flex: none;
-        grid-template-columns: 1fr; /* Força 1 sola columna al mòbil */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
+
     .dos-textos {
-        grid-template-columns: 1fr; /* Al mòbil passa a 1 sola columna */
+        grid-template-columns: 1fr;
         gap: 15px;
-        /* Si al mòbil veus el text enganxat a les vores, afegeix: padding: 0 20px; */
     }
 }
